@@ -8,7 +8,7 @@ docker builder build \
     --build-arg UID=$(id -u) \
     --build-arg UID_NAME=$(id -un) \
     --file Dockerfile \
-    --tag image-name:version .
+    --tag ugeek/typora:amd64 .
 ```
 ```bash
 xhost +local:docker
@@ -20,5 +20,5 @@ docker container run \
     --privileged \
     --volume /tmp/.X11-unix:/tmp/.X11-unix \
     --env DISPLAY=unix$DISPLAY \
-    --name container-name image-name:version
+    --name typora ugeek/typora:amd64
 ```
